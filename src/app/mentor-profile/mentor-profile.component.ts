@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserValidationService } from '../user-validation.service';
 @Component({
   selector: 'app-mentor-profile',
   templateUrl: './mentor-profile.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MentorProfileComponent implements OnInit {
 
-  constructor() { }
 
+  constructor(private userservice:UserValidationService) { }
+m_name: any;
   ngOnInit() {
+    this.m_name=this.userservice.m_name;
   }
 
 }

@@ -32,6 +32,7 @@ export class MentorLoginComponent implements OnInit {
     this.model.email="";
     this.model.password="";
     this.model.errorMessage="";
+    this.model.invalidStatus=false;
   }
   get f() { return this.mentorLoginForm.controls; }
 
@@ -46,24 +47,20 @@ export class MentorLoginComponent implements OnInit {
          
           this.userservice.m_name=this.details[this.index].name;
           this.match=true;
+          break;
         }
-        if(this.match && this.mentorLoginForm.valid){
+        else{
+          this.match=false;
+        }
+      }
+        if(this.match == true){
           this.router.navigate(['/mentor-profile']);
         }
+        else{
+          this.model.errorMessage="username and password mismatch";
+          this.model.invalidStatus=true;
+        }
      
-    }
-      
-      
-    
-    
-        
-      
     }))
-    if(this.match == false){
-      this.model.errorMessage="Username or password mismatch";
-    }
- 
-   
   }
-
 }

@@ -49,27 +49,21 @@ export class LoginComponent implements OnInit {
       for(this.index=0;this.index<(this.details.length);this.index++){
         if(this.details[this.index].email == this.model.email && this.details[this.index].password == this.model.password ){
           this.userservice.u_name=this.details[this.index].name;
-         this.match=true;
+          this.match=true;
+          break;
         }
-        if(this.match && this.loginForm.valid){
+        else{
+          this.match=false;
+        }
+      }
+        if(this.match == true){
           this.router.navigate(['/profile']);
         }
+        else{
+          this.model.errorMessage="username and password mismatch";
+          this.model.invalidStatus=true;
+        }
      
-    }
-      
-      
-    
-    
-        
-      
     }))
-    if(this.match == false){
-      this.model.errorMessage="Username or password mismatch";
-    }
- 
-   
   }
-
 }
-
-

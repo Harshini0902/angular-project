@@ -23,7 +23,7 @@
                         <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
                     </div>
                 </div>
-                <div *ngIf="match==false">{{model.errorMessage}}</div>
+                <div *ngIf="model.invalidStatus">{{model.errorMessage}}</div>
                 <input type="submit" value="Login" class="btn btn-primary btn-large btn-color ">
             </form>
         </div>
