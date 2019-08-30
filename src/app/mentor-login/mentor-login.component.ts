@@ -1,0 +1,69 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserValidationService } from '../user-validation.service';
+
+@Component({
+  selector: 'app-mentor-login',
+  templateUrl: './mentor-login.component.html',
+  styleUrls: ['./mentor-login.component.scss']
+})
+export class MentorLoginComponent implements OnInit {
+  jsonURL;
+  details:any;
+  index:any;
+  validStatus:boolean;
+  constructor(private formBuilder: FormBuilder,private router:Router,private userservice:UserValidationService) { }
+  model:any={
+    email:String,
+    password:String,
+    errorMessage:String,
+    invalidStatus:Boolean
+
+  };
+  mentorLoginForm: FormGroup;
+  submitted = false;
+  match=false;
+  ngOnInit() {
+    this.mentorLoginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+    this.model.email="";
+    this.model.password="";
+    this.model.errorMessage="";
+  }
+  get f() { return this.mentorLoginForm.controls; }
+
+  onSubmit() {
+    this.submitted=true;
+    this.jsonURL='/assets/mentorCredentials.json';
+    this.userservice.getUserDetails(this.jsonURL).subscribe((data =>{
+      
+      this.details=data;
+      for(this.index=0;this.index<(this.details.length);this.index++){
+        if(this.details[this.index].email == this.model.email && this.details[this.index].password == this.model.password ){
+         
+          this.userservice.m_name=this.details[this.index].name;
+          this.match=true;
+        }
+        if(this.match && this.mentorLoginForm.valid){
+          this.router.navigate(['/mentor-profile']);
+        }
+     
+    }
+      
+      
+    
+    
+        
+      
+    }))
+    if(this.match == false){
+      this.model.errorMessage="Username or password mismatch";
+    }
+ 
+   
+  }
+
+}

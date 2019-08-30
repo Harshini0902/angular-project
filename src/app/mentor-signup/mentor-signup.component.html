@@ -1,0 +1,150 @@
+<app-navbar></app-navbar>
+<div class="container search margin">
+    <div class="jumbotron col-lg-6 m-auto">
+        <div class="jumbotron-content">
+            <h1>Mentor Sign-up</h1>
+            <p class="jumbotron-lg-only">Sign up to create an account</p>
+            <form name="user-sign-up">
+                <div class="form-group"><label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Enter Fullname">
+                </div>
+                <div class="form-group"><label for="email">Username</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter email address">
+                </div>
+                <div class="form-group"><label for="technology">Technologies</label>
+                    <select class="custom-select" id="technology" multiple>
+                        <option selected>Select technologies</option>
+                        <option value="angular">Angular</option>
+                        <option value="spring">Spring</option>
+                        <option value="php">PHP</option>
+                        <option value="java">Java</option>
+                        <option value="dotnet">Dotnet</option>
+                    </select>
+                </div>
+                <div class="form-group"><label for="url">Linkedin URL</label>
+                    <input type="url" id="url" name="url" class="form-control" placeholder="Enter Linkedin URL">
+                </div>
+                <div class="form-group"><label for="timezone">Timezone</label>
+                    <select class="custom-select" id="timezone">
+                        <option value="-12">(GMT-12:00) International Date Line West</option>
+                        <option value="-11">(GMT-11:00) Midway Island, Samoa</option>
+                        <option value="-10">(GMT-10:00) Hawaii</option>
+                        <option value="-9">(GMT-09:00) Alaska</option>
+                        <option value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
+                        <option value="-8">(GMT-08:00) Tijuana, Baja California</option>
+                        <option value="-7">(GMT-07:00) Arizona</option>
+                        <option value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+                        <option value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
+                        <option value="-6">(GMT-06:00) Central America</option>
+                        <option value="-6">(GMT-06:00) Central Time (US & Canada)</option>
+                        <option value="-6">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+                        <option value="-6">(GMT-06:00) Saskatchewan</option>
+                        <option value="-5">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+                        <option value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
+                        <option value="-5">(GMT-05:00) Indiana (East)</option>
+                        <option value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
+                        <option value="-4">(GMT-04:00) Caracas, La Paz</option>
+                        <option value="-4">(GMT-04:00) Manaus</option>
+                        <option value="-4">(GMT-04:00) Santiago</option>
+                        <option value="-3.5">(GMT-03:30) Newfoundland</option>
+                        <option value="-3">(GMT-03:00) Brasilia</option>
+                        <option value="-3">(GMT-03:00) Buenos Aires, Georgetown</option>
+                        <option value="-3">(GMT-03:00) Greenland</option>
+                        <option value="-3">(GMT-03:00) Montevideo</option>
+                        <option value="-2">(GMT-02:00) Mid-Atlantic</option>
+                        <option value="-1">(GMT-01:00) Cape Verde Is.</option>
+                        <option value="-1">(GMT-01:00) Azores</option>
+                        <option value="0">(GMT+00:00) Casablanca, Monrovia, Reykjavik</option>
+                        <option value="0">(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+                        <option value="1">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+                        <option value="1">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+                        <option value="1">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+                        <option value="1">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+                        <option value="1">(GMT+01:00) West Central Africa</option>
+                        <option value="2">(GMT+02:00) Amman</option>
+                        <option value="2">(GMT+02:00) Athens, Bucharest, Istanbul</option>
+                        <option value="2">(GMT+02:00) Beirut</option>
+                        <option value="2">(GMT+02:00) Cairo</option>
+                        <option value="2">(GMT+02:00) Harare, Pretoria</option>
+                        <option value="2">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+                        <option value="2">(GMT+02:00) Jerusalem</option>
+                        <option value="2">(GMT+02:00) Minsk</option>
+                        <option value="2">(GMT+02:00) Windhoek</option>
+                        <option value="3">(GMT+03:00) Kuwait, Riyadh, Baghdad</option>
+                        <option value="3">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+                        <option value="3">(GMT+03:00) Nairobi</option>
+                        <option value="3">(GMT+03:00) Tbilisi</option>
+                        <option value="3.5">(GMT+03:30) Tehran</option>
+                        <option value="4">(GMT+04:00) Abu Dhabi, Muscat</option>
+                        <option value="4">(GMT+04:00) Baku</option>
+                        <option value="4">(GMT+04:00) Yerevan</option>
+                        <option value="4.5">(GMT+04:30) Kabul</option>
+                        <option value="5">(GMT+05:00) Yekaterinburg</option>
+                        <option value="5">(GMT+05:00) Islamabad, Karachi, Tashkent</option>
+                        <option value="5.5">(GMT+05:30) Sri Jayawardenapura</option>
+                        <option value="5.5">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+                        <option value="5.75">(GMT+05:45) Kathmandu</option>
+                        <option value="6">(GMT+06:00) Almaty, Novosibirsk</option>
+                        <option value="6">(GMT+06:00) Astana, Dhaka</option>
+                        <option value="6.5">(GMT+06:30) Yangon (Rangoon)</option>
+                        <option value="7">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+                        <option value="7">(GMT+07:00) Krasnoyarsk</option>
+                        <option value="8">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+                        <option value="8">(GMT+08:00) Kuala Lumpur, Singapore</option>
+                        <option value="8">(GMT+08:00) Irkutsk, Ulaan Bataar</option>
+                        <option value="8">(GMT+08:00) Perth</option>
+                        <option value="8">(GMT+08:00) Taipei</option>
+                        <option value="9">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+                        <option value="9">(GMT+09:00) Seoul</option>
+                        <option value="9">(GMT+09:00) Yakutsk</option>
+                        <option value="9.5">(GMT+09:30) Adelaide</option>
+                        <option value="9.5">(GMT+09:30) Darwin</option>
+                        <option value="10">(GMT+10:00) Brisbane</option>
+                        <option value="10">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+                        <option value="10">(GMT+10:00) Hobart</option>
+                        <option value="10">(GMT+10:00) Guam, Port Moresby</option>
+                        <option value="10">(GMT+10:00) Vladivostok</option>
+                        <option value="11">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
+                        <option value="12">(GMT+12:00) Auckland, Wellington</option>
+                        <option value="12">(GMT+12:00) Fiji, Kamchatka, Marshall Is.</option>
+                        <option value="13">(GMT+13:00) Nuku'alofa</option>
+                    </select>
+                </div>
+                <div class="form-group"><label for="timings">Work Timings</label>
+                    <select class="custom-select" id="timings">
+                        <option selected>Select work-timings</option>
+                        <option value="shift1">6.00 A.M to 10.00 A.M</option>
+                        <option value="shift2">10.00 A.M to 02.00 P.M</option>
+                        <option value="shift3">02.00 P.M to 06.00 P.M</option>
+                        <option value="shift4">06.00 P.M to 10.00 P.M</option>
+                    </select>
+                </div>
+
+                <div>Material Type</div>
+
+                <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="material1" name="material1" value="videos">
+                    <label class="custom-control-label" for="material1">Videos</label>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="material2" name="material2" value="ppt">
+                    <label class="custom-control-label" for="material2">PPT</label>
+                </div>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="material3" name="material3" value="quiz">
+                    <label class="custom-control-label" for="material3">Quiz</label>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control"
+                        placeholder="Enter password">
+                </div>
+                <div class="form-group">
+                    <label for="password2">Confirm password</label><input type="password" id="password2"
+                        name="password2" class="form-control" placeholder="Re-enter password">
+                </div>
+                <input type="submit" value="Sign-up" [routerLink]="['/mentor-login']"class="btn btn-primary btn-large btn-color ">
+            </form>
+        </div>
+    </div>
+</div>

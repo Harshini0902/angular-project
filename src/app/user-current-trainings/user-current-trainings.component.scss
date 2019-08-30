@@ -1,0 +1,36 @@
+.sidebar {
+    background-color: #212529;
+}
+
+.row{
+    margin:0;
+}
+.heading{
+    font-size:40px;
+    font-weight: 400;
+    text-shadow: rgba(202, 207, 216, 0.55) 0px 2px 4px;
+}
+.card-color{
+    background-color: #212529;
+    border-color:#212529;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+h3.card-title ,p.card-text{
+color:white;
+}
+.card-img,.user-img{
+    height:175px;
+    padding:10px;
+}
+
+.btn-color {
+    background-color: #4B0082;
+    border-color: #4B0082;
+}
+
+.btn-color:hover{
+    background-color:#560A6B;
+    border-color:#560A6B;
+}

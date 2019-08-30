@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="heading">Learn on your schedule</div>
+    <div class="sub-heading">Anywhere, anytime. Enjoy risk-free with our 30-day, money-back guarantee.</div>
+
+    <div class="jumbotron col-lg-8">
+        <div class="jumbotron-content">
+            <h1>Search Courses</h1>
+            <p class="jumbotron-lg-only">Based on technology and time</p>
+            <form [formGroup]="searchForm" (ngSubmit)="onSearch(searchForm.value)">
+                <div class="form-group"><label for="technology">Technology</label>
+                    <select class="custom-select" formControlName="techName" id="technology">
+                        <option value="">Choose your technology</option>
+                        <option *ngFor="let technology of Technologies" [value]="technology" [ngValue]="technology" (change)="changeTechnology($event)">{{technology}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Start date</label>
+                    <input type="date" formControlName="date" name="date" class="form-control" id="date"
+                        placeholder="Search based on start date">
+                </div>
+                <button [routerLink]="['/trainers',searchForm.value]" class="btn btn-primary btn-large btn-color ">Search</button>
+            </form>
+
+        </div>
+    </div>
+</div>

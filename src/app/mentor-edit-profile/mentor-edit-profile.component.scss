@@ -1,0 +1,42 @@
+.sidebar {
+    background-color: #212529;
+}
+
+.row{
+    margin:0;
+}
+.link, .footer{
+    color: white;
+}
+
+.link:hover {
+    color: lightgrey;
+}
+
+.jumbotron {
+    background-color: #212529;
+    
+}
+
+.jumbotron-content {
+    color: white;
+}
+
+.btn-color {
+    background-color: #4B0082;
+    border-color: #4B0082;
+}
+
+.btn-color:hover{
+    background-color:#560A6B;
+    border-color:#560A6B;
+}
+
+
+.bg-primary {
+    background-color: #000 !important;
+}
+.margin{
+   margin-top:30px;
+   margin-bottom:30px;
+}

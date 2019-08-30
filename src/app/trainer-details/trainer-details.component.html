@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="heading">Trainer details</div>
+    <div *ngFor="let t of trainer">
+        <div class="card card-inverse card-color">
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-2 col-lg-3"><img src="/assets/trainer3.png" class="card-img"></div>
+                    <div class="col-md-10 col-lg-9">
+                        <h3 class="card-title">{{t.name}}</h3>
+                        <p class="card-text">Rating :{{t.rating}}</p>
+                        <p class="card-text">Technology : <span class="badge badge-secondary mr-2">{{t.tech}}</span></p>
+                        <button class="btn btn-primary btn-color mr-2" data-toggle="modal"
+                        data-target="#propose">Propose training</button>
+                        <button (click)="name=t.name;rating=t.rating;tech=t.tech;trainings=t.trainings;fee=t.fee;" class="btn btn-primary btn-color" data-toggle="modal"
+                            data-target="#exampleModal">View Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Trainer Profile</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <img src="/assets/trainer.png" class="float-left user-img">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bold">Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{name}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bold">Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{name}}@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bold">Technology</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{tech}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bold">Rating</label>
+                            </div>
+                            <div class="col-md-6">
+                                
+                                <p>{{rating}}</p>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bold">No. of Trainings completed</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{trainings}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bold">Fee charges</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><i class="fa fa-rupee"></i>{{fee}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="bold">Commission Charges</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p><i class="fa fa-rupee"></i>2000</p>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-color float-right mr-2" data-toggle="modal"
+                        data-target="#propose">Propose training</button>
+                        <button type="button" class="btn btn-primary btn-color float-right mr-2"
+                            data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="propose" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Propose Training</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <p>Proposal is sent successfully</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-color" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
