@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserSearchComponent } from './user-search.component';
+import { NavbarOnlyLayoutComponent } from './navbar-only-layout.component';
 
-describe('UserSearchComponent', () => {
-  let component: UserSearchComponent;
-  let fixture: ComponentFixture<UserSearchComponent>;
+describe('NavbarOnlyLayoutComponent', () => {
+  let component: NavbarOnlyLayoutComponent;
+  let fixture: ComponentFixture<NavbarOnlyLayoutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserSearchComponent ]
+      declarations: [ NavbarOnlyLayoutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserSearchComponent);
+    fixture = TestBed.createComponent(NavbarOnlyLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

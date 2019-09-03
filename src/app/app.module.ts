@@ -9,7 +9,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 import { SearchFormComponent } from './search-form/search-form.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { MentorSignupComponent } from './mentor-signup/mentor-signup.component';
@@ -23,9 +22,6 @@ import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.
 import { UserCurrentTrainingsComponent } from './user-current-trainings/user-current-trainings.component';
 import { UserCompletedTrainingsComponent } from './user-completed-trainings/user-completed-trainings.component';
 import { UserPaymentsComponent } from './user-payments/user-payments.component';
-import { PlainNavbarComponent } from './plain-navbar/plain-navbar.component';
-
-import { UserSearchComponent } from './user-search/user-search.component';
 import { MentorProfileComponent } from './mentor-profile/mentor-profile.component';
 import { MentorEditProfileComponent } from './mentor-edit-profile/mentor-edit-profile.component';
 import { MentorEditSkillsComponent } from './mentor-edit-skills/mentor-edit-skills.component';
@@ -39,6 +35,8 @@ import { ChangeCommissionComponent } from './change-commission/change-commission
 import { AdminPermissionsComponent } from './admin-permissions/admin-permissions.component';
 import { AdminReportsComponent } from './admin-reports/admin-reports.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarOnlyLayoutComponent } from './layouts/navbar-only-layout/navbar-only-layout.component';
+import { NavbarAndSidebarLayoutComponent } from './layouts/navbar-and-sidebar-layout/navbar-and-sidebar-layout.component';
 
     
 
@@ -48,8 +46,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     SidebarComponent,
    SearchFormComponent,
-    HomepageComponent,
-    LoginComponent,
+   LoginComponent,
     SignupComponent,
     MentorSignupComponent,
     MentorLoginComponent,
@@ -59,8 +56,6 @@ import { HttpClientModule } from '@angular/common/http';
     UserCurrentTrainingsComponent,
     UserCompletedTrainingsComponent,
     UserPaymentsComponent,
-    PlainNavbarComponent,
-    UserSearchComponent,
     MentorProfileComponent,
     MentorEditProfileComponent,
     MentorEditSkillsComponent,
@@ -72,7 +67,9 @@ import { HttpClientModule } from '@angular/common/http';
     AdminEditTechnologyComponent,
     ChangeCommissionComponent,
     AdminPermissionsComponent,
-    AdminReportsComponent
+    AdminReportsComponent,
+    NavbarOnlyLayoutComponent,
+    NavbarAndSidebarLayoutComponent
   ],
   imports: [
     BrowserModule,
