@@ -35,10 +35,11 @@ const routes: Routes = [
       {path:'signup',component:SignupComponent},
       {path:'mentor-login',component:MentorLoginComponent},
       {path:'mentor-signup',component:MentorSignupComponent},
-      {path:'logoff',component:SearchFormComponent},
+      {path:'logoff',component:LoginComponent},
+      {path:'mentor-logoff',component:MentorLoginComponent},
       {path:'admin-login',component:AdminLoginComponent},
       {path:'admin-logoff',component:AdminLoginComponent},
-      {path:'payments',component:UserPaymentsComponent}
+     
     
     ]
   },
@@ -49,6 +50,7 @@ const routes: Routes = [
       {path:'current-trainings',component:UserCurrentTrainingsComponent},
       {path:'completed-trainings',component:UserCompletedTrainingsComponent},
       {path:'user-search',component:SearchFormComponent},
+      
       {path:'mentor-profile',component:MentorProfileComponent},
     {path:'mentor-edit-profile',component:MentorEditProfileComponent},
     {path:'mentor-trainings',component:MentorTrainingsComponent},
@@ -58,17 +60,18 @@ const routes: Routes = [
     {path:'admin-edit-technology',component:AdminEditTechnologyComponent},
     {path:'change-commission',component:ChangeCommissionComponent},
     {path:'admin-reports',component:AdminReportsComponent},
+    {path:'payments',component:UserPaymentsComponent}
     
     ]
   },
-    
+  
   {path:'trainers/:techName',component:TrainerDetailsComponent},
   
-    // {path:'trainer-details',component:TrainerDetailsComponent},
+   
     
    
 
-    {path:'**',pathMatch:'full',redirectTo:''}
+  {path:'**',pathMatch:'full',redirectTo:''}
     
 
 ];

@@ -9,18 +9,25 @@
             <form [formGroup]="searchForm" (ngSubmit)="onSearch(searchForm.value)">
                 <div class="form-group">
                     <label for="technology">Technology</label>
-                    <select class="custom-select" formControlName="techName" id="technology">
+                    <select class="custom-select" formControlName="techName" id="technology"  [ngClass]="{ 'is-invalid': submitted && f.techName.errors }">
                         <option value="">Choose your technology</option>
-                        <option *ngFor="let technology of Technologies" [value]="technology" [ngValue]="technology" (change)="changeTechnology($event)">{{technology}}
+                        <option *ngFor="let technology of Technologies" [value]="technology" [ngValue]="technology"
+                            (change)="changeTechnology($event)">{{technology}}
                         </option>
                     </select>
+                    <div *ngIf="submitted && f.techName.errors" class="invalid-feedback">
+                        <div *ngIf="f.techName.errors.required">Technology is required</div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="date">Start date</label>
-                    <input type="date" formControlName="date" name="date" class="form-control" id="date"
+                    <label for="dates">Start date</label>
+                    <input type="date" formControlName="dates" name="dates" class="form-control" id="dates"  [ngClass]="{ 'is-invalid': submitted && f.dates.errors }"
                         placeholder="Search based on start date">
+                        <div *ngIf="submitted && f.dates.errors" class="invalid-feedback">
+                            <div *ngIf="f.dates.errors.required">Date is required</div>
+                        </div>
                 </div>
-                <button type="submit" [routerLink]="['/trainers',searchForm.value]" class="btn btn-primary btn-large btn-color ">Search</button>
+                <button type="submit" class="btn btn-primary btn-large btn-color ">Search</button>
             </form>
 
         </div>
