@@ -9,22 +9,28 @@
 
     <ul class="navbar-nav ml-auto" *ngIf="hasNavbarLinks">
         <li>
-            
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><span class="link">User</span></a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item"  [routerLink]="['/signup']">SignUp</a>
+                    <a href="#" class="dropdown-item" [routerLink]="['/login']">Login</a>
+                </div>
+                </div>
+           
+        </li>
+        <li>
             <div class="dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><span class="link">Mentor</span></a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item"  [routerLink]="['/mentor-signup']">SignUp</a>
                     <a href="#" class="dropdown-item" [routerLink]="['/mentor-login']">Login</a>
                 </div>
-                </div>
+                </div> 
+            
         </li>
         <li>
             
-            <a class="nav-link"  [routerLink]="['/signup']"><span class="link">SignUp</span></a>
-        </li>
-        <li>
-            
-            <a class="nav-link" [routerLink]="['/login']"><span class="link">Login</span></a>
+            <a class="nav-link" [routerLink]="['/admin-login']"><span class="link">Admin</span></a>
         </li>
     </ul>
 </nav>

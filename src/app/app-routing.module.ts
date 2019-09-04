@@ -23,6 +23,7 @@ import { ChangeCommissionComponent } from './change-commission/change-commission
 import { AdminReportsComponent } from './admin-reports/admin-reports.component';
 import { NavbarOnlyLayoutComponent } from './layouts/navbar-only-layout/navbar-only-layout.component';
 import { NavbarAndSidebarLayoutComponent } from './layouts/navbar-and-sidebar-layout/navbar-and-sidebar-layout.component';
+import { UserPaymentsComponent } from './user-payments/user-payments.component';
 
 
 
@@ -37,6 +38,7 @@ const routes: Routes = [
       {path:'logoff',component:SearchFormComponent},
       {path:'admin-login',component:AdminLoginComponent},
       {path:'admin-logoff',component:AdminLoginComponent},
+      {path:'payments',component:UserPaymentsComponent}
     
     ]
   },
@@ -60,27 +62,11 @@ const routes: Routes = [
     ]
   },
     
-    
+  {path:'trainers/:techName',component:TrainerDetailsComponent},
   
-    {path:'trainer-details',component:TrainerDetailsComponent},
-    {path:'trainers/:techName',component:TrainerDetailsComponent},
-    // {path:'profile',component:UserProfileComponent},
-    // {path:'edit-profile',component:UserEditProfileComponent},
+    // {path:'trainer-details',component:TrainerDetailsComponent},
     
-    // {path:'current-trainings',component:UserCurrentTrainingsComponent},
-    // {path:'completed-trainings',component:UserCompletedTrainingsComponent},
-    // {path:'user-search',component:UserSearchComponent},
-    // {path:'mentor-profile',component:MentorProfileComponent},
-    // {path:'mentor-edit-profile',component:MentorEditProfileComponent},
-    // {path:'mentor-trainings',component:MentorTrainingsComponent},
-    // {path:'mentor-edit-skills',component:MentorEditSkillsComponent},
-    // {path:'mentor-payments',component:MentorPaymentsComponent},
-    // {path:'admin-login',component:AdminLoginComponent},
-    // {path:'admin-permissions',component:AdminPermissionsComponent},
-    // {path:'admin-edit-technology',component:AdminEditTechnologyComponent},
-    // {path:'change-commission',component:ChangeCommissionComponent},
-    // {path:'admin-reports',component:AdminReportsComponent},
-    // {path:'admin-logoff',component:AdminLoginComponent},
+   
 
     {path:'**',pathMatch:'full',redirectTo:''}
     

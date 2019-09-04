@@ -94,8 +94,7 @@
 
                         <button class="btn btn-primary btn-color float-right mr-2" data-toggle="modal"
                         data-target="#propose">Propose training</button>
-                        <button type="button" class="btn btn-primary btn-color float-right mr-2"
-                            data-dismiss="modal">Close</button>
+                        <button [routerLink]="['/payments']" class="btn btn-primary btn-color float-right mr-2">Pay</button>
                     </div>
                 </div>
             </div>
@@ -114,7 +113,9 @@
                         <p>Proposal is sent successfully</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-color" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-color float-right mr-2"
+                            data-dismiss="modal">Close</button>
+                        
                     </div>
                 </div>
             </div>

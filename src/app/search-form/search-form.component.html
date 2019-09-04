@@ -7,7 +7,8 @@
             <h1>Search Courses</h1>
             <p class="jumbotron-lg-only">Based on technology and time</p>
             <form [formGroup]="searchForm" (ngSubmit)="onSearch(searchForm.value)">
-                <div class="form-group"><label for="technology">Technology</label>
+                <div class="form-group">
+                    <label for="technology">Technology</label>
                     <select class="custom-select" formControlName="techName" id="technology">
                         <option value="">Choose your technology</option>
                         <option *ngFor="let technology of Technologies" [value]="technology" [ngValue]="technology" (change)="changeTechnology($event)">{{technology}}
@@ -19,7 +20,7 @@
                     <input type="date" formControlName="date" name="date" class="form-control" id="date"
                         placeholder="Search based on start date">
                 </div>
-                <button [routerLink]="['/trainers',searchForm.value]" class="btn btn-primary btn-large btn-color ">Search</button>
+                <button type="submit" [routerLink]="['/trainers',searchForm.value]" class="btn btn-primary btn-large btn-color ">Search</button>
             </form>
 
         </div>

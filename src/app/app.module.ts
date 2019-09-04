@@ -27,9 +27,9 @@ import { MentorEditProfileComponent } from './mentor-edit-profile/mentor-edit-pr
 import { MentorEditSkillsComponent } from './mentor-edit-skills/mentor-edit-skills.component';
 import { MentorTrainingsComponent } from './mentor-trainings/mentor-trainings.component';
 import { MentorPaymentsComponent } from './mentor-payments/mentor-payments.component';
-import { MentorSidebarComponent } from './mentor-sidebar/mentor-sidebar.component';
+
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
+
 import { AdminEditTechnologyComponent } from './admin-edit-technology/admin-edit-technology.component';
 import { ChangeCommissionComponent } from './change-commission/change-commission.component';
 import { AdminPermissionsComponent } from './admin-permissions/admin-permissions.component';
@@ -61,9 +61,7 @@ import { NavbarAndSidebarLayoutComponent } from './layouts/navbar-and-sidebar-la
     MentorEditSkillsComponent,
     MentorTrainingsComponent,
     MentorPaymentsComponent,
-    MentorSidebarComponent,
     AdminLoginComponent,
-    AdminSidebarComponent,
     AdminEditTechnologyComponent,
     ChangeCommissionComponent,
     AdminPermissionsComponent,

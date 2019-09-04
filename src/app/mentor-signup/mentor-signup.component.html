@@ -1,15 +1,27 @@
-
 <div class="container search margin">
     <div class="jumbotron col-lg-6 m-auto">
         <div class="jumbotron-content">
             <h1>Mentor Sign-up</h1>
             <p class="jumbotron-lg-only">Sign up to create an account</p>
-            <form name="user-sign-up">
-                <div class="form-group"><label for="name">Name</label>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="Enter Fullname">
+            <form [formGroup]="mentorSignupForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="name" formControlName="name" name="name" id="name" class="form-control"
+                        placeholder="Enter fullname" [(ngModel)]="model.name"
+                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Name is required</div>
+                    </div>
                 </div>
-                <div class="form-group"><label for="email">Username</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter email address">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" formControlName="email" name="email" id="email" class="form-control"
+                        placeholder="Enter email address" [(ngModel)]="model.email"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    </div>
                 </div>
                 <div class="form-group"><label for="technology">Technologies</label>
                     <select class="custom-select" id="technology" multiple>
@@ -21,9 +33,16 @@
                         <option value="dotnet">Dotnet</option>
                     </select>
                 </div>
-                <div class="form-group"><label for="url">Linkedin URL</label>
-                    <input type="url" id="url" name="url" class="form-control" placeholder="Enter Linkedin URL">
+                <div class="form-group">
+                    <label for="name">Linkedin URL</label>
+                    <input type="url" formControlName="linkedinurl" name="linkedinurl" id="linkedinurl" class="form-control"
+                        placeholder="Enter Linkedin URL" [(ngModel)]="model.linkedinurl"
+                        [ngClass]="{ 'is-invalid': submitted && f.linkedinurl.errors }">
+                    <div *ngIf="submitted && f.linkedinurl.errors" class="invalid-feedback">
+                        <div *ngIf="f.linkedinurl.errors.required">Linkedin URL is required</div>
+                    </div>
                 </div>
+
                 <div class="form-group"><label for="timezone">Timezone</label>
                     <select class="custom-select" id="timezone">
                         <option value="-12">(GMT-12:00) International Date Line West</option>
@@ -136,14 +155,27 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" class="form-control"
-                        placeholder="Enter password">
+                    <input type="password" formControlName="password" name="password" id="password" class="form-control"
+                        placeholder="Enter password" [(ngModel)]="model.password"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="password2">Confirm password</label><input type="password" id="password2"
-                        name="password2" class="form-control" placeholder="Re-enter password">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" formControlName="password2" name="password2" id="password2"
+                        class="form-control" placeholder="Re-enter password" [(ngModel)]="model.password2"
+                        [ngClass]="{ 'is-invalid': submitted && f.password2.errors }">
+                    <div *ngIf="submitted && f.password2.errors" class="invalid-feedback">
+                        <div *ngIf="f.password2.errors.required">Password is required</div>
+                        <div *ngIf="f.password2.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
                 </div>
-                <input type="submit" value="Sign-up" [routerLink]="['/mentor-login']"class="btn btn-primary btn-large btn-color ">
+
+                <div *ngIf="model.invalidStatus">{{model.errorMessage}}</div>
+                <input type="submit" value="SignUp" class="btn btn-primary btn-large btn-color ">
             </form>
         </div>
     </div>
