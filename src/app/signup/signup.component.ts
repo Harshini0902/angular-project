@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User, UserValidationService } from '../user-validation.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit {
   
 
-  constructor(private formBuilder: FormBuilder,private router:Router) { }
+  constructor(private formBuilder: FormBuilder,private router:Router,private userValidationService:UserValidationService) { }
   model:any={
     name:String,
     email:String,
@@ -23,6 +24,8 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   submitted = false;
   match=false;
+  user:User;
+
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
       name:['',[Validators.required]],
@@ -49,8 +52,16 @@ export class SignupComponent implements OnInit {
       
     }
     else if(this.signupForm.valid){
+      this.user=new User();
+      this.user.fullName=this.signupForm.get('name').value;
+      this.user.userName=this.signupForm.get('email').value;
+      this.user.password=this.signupForm.get('password').value;
+      this.save();
       this.router.navigate(['/login']);
     }
     
+}
+save(){
+  this.userValidationService.createUser(this.user).subscribe(data => console.log(data),error=>console.log(error));
 }
 }
