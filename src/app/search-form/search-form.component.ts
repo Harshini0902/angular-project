@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SearchService } from '../search.service';
+import { UserValidationService } from '../user-validation.service';
 
 @Component({
   selector: 'app-search-form',
@@ -11,15 +12,21 @@ import { SearchService } from '../search.service';
 export class SearchFormComponent implements OnInit {
 Technologies:string[]=['Java','Angular','MySql'];
   techName: any;
-  dates:any;
+  // dates:any;
+  startdates:any;
+  enddates:any;
   searchForm: FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder,private route:ActivatedRoute,private router:Router,private searchService:SearchService) {}
+  constructor(private formBuilder: FormBuilder,private route:ActivatedRoute,private router:Router,private searchService:SearchService,private userValidationService:UserValidationService) {}
 
   ngOnInit() {
+    // this.dates.startdates=new Date();
+    // this.dates.enddates=new Date();
+   
     this.searchForm = this.formBuilder.group({
       techName:['',[Validators.required]],
-      dates:['',[Validators.required]]
+      startdates:[new Date(),[Validators.required]],
+      enddates:[new Date(),[Validators.required]]
      
     });
   }
@@ -30,15 +37,22 @@ Technologies:string[]=['Java','Angular','MySql'];
       onlySelf: true
     })
   }
-  onSearch(value){
+  onSearch(){
     this.submitted=true;
-     this.techName=value.techName;
-    // this.searchService.searchTechnology(this.techName,this.router);
+     this.techName=this.searchForm.get('techName');
+    
      if(this.searchForm.valid){
-       this.router.navigate(['/trainers',this.techName]);
+   
+      this.userValidationService.courseName=this.techName;
+      this.userValidationService.startDate=this.startdates;
+      this.userValidationService.endDate=this.enddates;
+     
+      //  this.router.navigate(['/trainers',this.techName]);
     }
     
   }
-
+  // save(){
+  //   this.userValidationService.searchMentor(this.techName).subscribe(data => console.log(data),error=>console.log(error));
+  // }
   
 }

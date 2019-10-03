@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { trainers } from '../trainers';
+import { UserValidationService } from '../user-validation.service';
 
 @Component({
   selector: 'app-trainer-details',
@@ -9,17 +10,12 @@ import { trainers } from '../trainers';
 })
 export class TrainerDetailsComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute,private userValidationService:UserValidationService) { }
 trainer=[];
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      var index=0;
-      for(var ind=0;ind<trainers.length;ind++){
-        if(trainers[ind].tech == params.get('techName')){
-          this.trainer[index]=trainers[ind];
-          index++;  
-        }
-      }
+      this.userValidationService.searchMentor(this.userValidationService.courseName).subscribe(data => console.log(data),error=>console.log(error));
+      
     });
   }
 

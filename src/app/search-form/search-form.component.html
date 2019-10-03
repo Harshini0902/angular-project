@@ -6,7 +6,7 @@
         <div class="jumbotron-content">
             <h1>Search Courses</h1>
             <p class="jumbotron-lg-only">Based on technology and time</p>
-            <form [formGroup]="searchForm" (ngSubmit)="onSearch(searchForm.value)">
+            <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
                 <div class="form-group">
                     <label for="technology">Technology</label>
                     <select class="custom-select" formControlName="techName" id="technology"  [ngClass]="{ 'is-invalid': submitted && f.techName.errors }">
@@ -20,11 +20,19 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="dates">Start date</label>
-                    <input type="date" formControlName="dates" name="dates" class="form-control" id="dates"  [ngClass]="{ 'is-invalid': submitted && f.dates.errors }"
+                    <label for="startdates">Start date</label>
+                    <input type="date" formControlName="startdates" name="startdates" class="form-control" id="startdates"  [ngClass]="{ 'is-invalid': submitted && f.startdates.errors }"
                         placeholder="Search based on start date">
-                        <div *ngIf="submitted && f.dates.errors" class="invalid-feedback">
-                            <div *ngIf="f.dates.errors.required">Date is required</div>
+                        <div *ngIf="submitted && f.startdates.errors" class="invalid-feedback">
+                            <div *ngIf="f.startdates.errors.required">Start Date is required</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="enddates">End date</label>
+                    <input type="date" formControlName="enddates" name="enddates" class="form-control" id="enddates"  [ngClass]="{ 'is-invalid': submitted && f.enddates.errors }"
+                        placeholder="Search based on end date">
+                        <div *ngIf="submitted && f.enddates.errors" class="invalid-feedback">
+                            <div *ngIf="f.enddates.errors.required">End Date is required</div>
                         </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-large btn-color ">Search</button>

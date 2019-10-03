@@ -38,12 +38,12 @@ export class MentorLoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted=true;
-    this.jsonURL='/assets/mentorCredentials.json';
-    this.userservice.getUserDetails(this.jsonURL).subscribe((data =>{
+   
+    this.userservice.getMentorDetails().subscribe((data =>{
       
       this.details=data;
       for(this.index=0;this.index<(this.details.length);this.index++){
-        if(this.details[this.index].email == this.model.email && this.details[this.index].password == this.model.password ){
+        if(this.details[this.index].userName == this.model.email && this.details[this.index].password == this.model.password ){
          
           this.userservice.m_name=this.details[this.index].name;
           this.match=true;
