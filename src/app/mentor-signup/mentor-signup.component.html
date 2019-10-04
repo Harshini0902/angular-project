@@ -50,7 +50,22 @@
                         <div *ngIf="f.linkedinurl.errors.required">Linkedin URL is required</div>
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <label for="startdates">Start date</label>
+                    <input type="date" formControlName="startdates" name="startdates" class="form-control" id="startdates"  [ngClass]="{ 'is-invalid': submitted && f.startdates.errors }"
+                        placeholder="Search based on start date">
+                        <div *ngIf="submitted && f.startdates.errors" class="invalid-feedback">
+                            <div *ngIf="f.startdates.errors.required">Start Date is required</div>
+                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="enddates">End date</label>
+                    <input type="date" formControlName="enddates" name="enddates" class="form-control" id="enddates"  [ngClass]="{ 'is-invalid': submitted && f.enddates.errors }"
+                        placeholder="Search based on end date">
+                        <div *ngIf="submitted && f.enddates.errors" class="invalid-feedback">
+                            <div *ngIf="f.enddates.errors.required">End Date is required</div>
+                        </div>
+                </div>
                 <div class="form-group"><label for="timezone">Timezone</label>
                     <select class="custom-select" id="timezone">
                         <option value="-12">(GMT-12:00) International Date Line West</option>

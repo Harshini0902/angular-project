@@ -27,8 +27,12 @@ export class UserValidationService {
     return this.http.post(`${this.baseUrl}` + '/mentordetails',mentor);
     
   }
+  createMentorCalendar(mentorCalendar:object,userName:String):Observable<object>{
+    return this.http.post(`${this.baseUrl}` + '/mentorcalendar/'+ `${userName}`,mentorCalendar);
+    
+  }
   searchMentor(techName:any):Observable<object>{
-    return this.http.get(`${this.baseUrl}` + '/mentordetails' + `${techName}`);
+    return this.http.get(`${this.baseUrl}` + '/mentordetails/' + `${techName}`);
     
   }
   getMentorDetails():Observable<Mentor>{
@@ -49,9 +53,9 @@ export class Mentor{
   courseName:String;
   linkedinUrl:String;
   isblocked:String;
-}
+}[];
 export class MentorCalendar{
-  calendarNum:number;
+  
   startDate:Date;
   endDate:Date;
 }

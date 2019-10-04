@@ -6,12 +6,12 @@
                 <div class="row">
                     <div class="col-md-2 col-lg-3"><img src="/assets/trainer3.png" class="card-img"></div>
                     <div class="col-md-10 col-lg-9">
-                        <h3 class="card-title">{{t.name}}</h3>
-                        <p class="card-text">Rating :{{t.rating}}</p>
-                        <p class="card-text">Technology : <span class="badge badge-secondary mr-2">{{t.tech}}</span></p>
+                        <h3 class="card-title">{{t.fullName}}</h3>
+                        <p class="card-text">Rating :5</p>
+                        <p class="card-text">Technology : <span class="badge badge-secondary mr-2">{{t.courseName}}</span></p>
                         <button class="btn btn-primary btn-color mr-2" data-toggle="modal"
                         data-target="#propose">Propose training</button>
-                        <button (click)="name=t.name;rating=t.rating;tech=t.tech;trainings=t.trainings;fee=t.fee;" class="btn btn-primary btn-color" data-toggle="modal"
+                        <button (click)="name=t.fullName;email=t.userName;rating=5;tech=t.courseName;trainings=t.trainings;fee=t.fees;" class="btn btn-primary btn-color" data-toggle="modal"
                             data-target="#exampleModal">View Profile</button>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                                 <label class="bold">Email</label>
                             </div>
                             <div class="col-md-6">
-                                <p>{{name}}@gmail.com</p>
+                                <p>{{email}}</p>
                             </div>
                         </div>
 

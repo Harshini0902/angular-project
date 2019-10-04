@@ -39,15 +39,16 @@ Technologies:string[]=['Java','Angular','MySql'];
   }
   onSearch(){
     this.submitted=true;
-     this.techName=this.searchForm.get('techName');
+     this.techName=this.searchForm.get('techName').value;
     
      if(this.searchForm.valid){
    
       this.userValidationService.courseName=this.techName;
-      this.userValidationService.startDate=this.startdates;
-      this.userValidationService.endDate=this.enddates;
-     
-      //  this.router.navigate(['/trainers',this.techName]);
+      this.userValidationService.startDate=this.searchForm.get('startdates').value;
+      this.userValidationService.endDate=this.searchForm.get('enddates').value;
+     console.log(this.searchForm.get('enddates').value);
+      this.router.navigate(['/trainers',this.techName]);
+      console.log(this.searchForm.get('startdates').value);
     }
     
   }

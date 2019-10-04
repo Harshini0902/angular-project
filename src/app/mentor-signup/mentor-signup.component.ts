@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Mentor, UserValidationService } from '../user-validation.service';
+import { Mentor, UserValidationService, MentorCalendar } from '../user-validation.service';
 
 @Component({
   selector: 'app-mentor-signup',
@@ -21,6 +21,7 @@ export class MentorSignupComponent implements OnInit {
 
   };
   mentor:Mentor;
+  mentorCalendar:MentorCalendar;
   mentorSignupForm: FormGroup;
   submitted = false;
   match=false;
@@ -34,7 +35,9 @@ export class MentorSignupComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       password2: ['', [Validators.required, Validators.minLength(6)]],
       courseName:['',[Validators.required]],
-      linkedinurl:['',[Validators.required]]
+      linkedinurl:['',[Validators.required]],
+      startdates:['',[Validators.required]],
+      enddates:['',[Validators.required]]
 
     });
     this.model.name="";
@@ -58,17 +61,24 @@ export class MentorSignupComponent implements OnInit {
     }
     else if(this.mentorSignupForm.valid){
       this.mentor=new Mentor();
+      this.mentorCalendar=new MentorCalendar();
       this.mentor.fullName=this.mentorSignupForm.get('name').value;
       this.mentor.userName=this.mentorSignupForm.get('email').value;
       this.mentor.password=this.mentorSignupForm.get('password').value;
       this.mentor.courseName=this.mentorSignupForm.get('courseName').value;
       this.mentor.linkedinUrl=this.mentorSignupForm.get('linkedinurl').value;
+      this.mentorCalendar.startDate=this.mentorSignupForm.get('startdates').value;
+      this.mentorCalendar.endDate=this.mentorSignupForm.get('enddates').value;
       this.save();
-     this.router.navigate(['/mentor-login']);
+      this.router.navigate(['/mentor-login']);
     }
     
 }
 save(){
+  console.log("entered1");
   this.userValidationService.createMentor(this.mentor).subscribe(data => console.log(data),error=>console.log(error));
+  console.log("entered2");
+  this.userValidationService.createMentorCalendar(this.mentorCalendar,this.mentor.userName).subscribe(data => console.log(data),error=>console.log(error));
+  console.log("entered3");
 }
 }

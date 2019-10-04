@@ -12,11 +12,17 @@ export class TrainerDetailsComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,private userValidationService:UserValidationService) { }
 trainer=[];
+mentorDetails;
+i;
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      this.userValidationService.searchMentor(this.userValidationService.courseName).subscribe(data => console.log(data),error=>console.log(error));
-      
-    });
-  }
-
+   
+     this.mentorDetails= this.userValidationService.searchMentor(this.userValidationService.courseName).subscribe((data) => {
+      var index=0;
+      for(this.i=0;this.i<Object.keys(data).length;this.i++){
+        this.trainer[index]=data[this.i];
+        index++;
+      }
+   
+})
+}
 }
