@@ -12,19 +12,19 @@ export class UserValidationService {
   startDate:any;
   endDate:any;
 
-  private baseUrl='http://localhost:8081/userdetailsapi';
+  private baseUrl='http://localhost:8761';
   constructor(private http:HttpClient){}
   
   getUserDetails():Observable<User>{
-    return this.http.get<User>(`${this.baseUrl}` + '/userdetails');
+    return this.http.get<User>(`${this.baseUrl}` + '/userapi/userdetailsapi/userdetails');
   }
 
   createUser(user:object):Observable<object>{
-    return this.http.post(`${this.baseUrl}` + '/userdetails',user);
+    return this.http.post(`${this.baseUrl}` + '/userapi/userdetailsapi/userdetails',user);
     
   }
   createMentor(mentor:object):Observable<object>{
-    return this.http.post(`${this.baseUrl}` + '/mentordetails',mentor);
+    return this.http.post(`${this.baseUrl}` + '/mentorapi/mentordetailsapi/mentordetails',mentor);
     
   }
   createMentorCalendar(mentorCalendar:object,userName:String):Observable<object>{
@@ -32,11 +32,11 @@ export class UserValidationService {
     
   }
   searchMentor(techName:any):Observable<object>{
-    return this.http.get(`${this.baseUrl}` + '/mentordetails/' + `${techName}`);
+    return this.http.get(`${this.baseUrl}` + '/mentorapi/mentordetailsapi/mentordetails/' + `${techName}`);
     
   }
   getMentorDetails():Observable<Mentor>{
-    return this.http.get<Mentor>(`${this.baseUrl}` + '/mentordetails');
+    return this.http.get<Mentor>(`${this.baseUrl}` + '/mentorapi/mentordetailsapi/mentordetails');
   }
 }
 export class User{

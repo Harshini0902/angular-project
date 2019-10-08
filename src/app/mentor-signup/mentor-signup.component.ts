@@ -78,7 +78,7 @@ save(){
   console.log("entered1");
   this.userValidationService.createMentor(this.mentor).subscribe(data => console.log(data),error=>console.log(error));
   console.log("entered2");
-  this.userValidationService.createMentorCalendar(this.mentorCalendar,this.mentor.userName).subscribe(data => console.log(data),error=>console.log(error));
-  console.log("entered3");
+  // this.userValidationService.createMentorCalendar(this.mentorCalendar,this.mentor.userName).subscribe(data => console.log(data),error=>console.log(error));
+  // console.log("entered3");
 }
 }
