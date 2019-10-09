@@ -54,6 +54,14 @@ export class UserValidationService {
   getMentorDetails():Observable<Mentor>{
     return this.http.get<Mentor>(`${this.baseUrl}` + '/mentorapi/mentordetailsapi/mentordetails');
   }
+
+  createTechnology(technologies:object):Observable<object>{
+    return this.http.post(`${this.baseUrl}` + '/technologyapi/technologydetailsapi/technologies',technologies);
+    
+  }
+  getTechnologies():Observable<Technologies>{
+    return this.http.get<Technologies>(`${this.baseUrl}` + '/technologyapi/technologydetailsapi/technologies');
+  }
 }
 export class User{
   userName:String;
@@ -66,7 +74,6 @@ export class Mentor{
   password:String;
   fullName:String;
   fees:number;
-  commission:number;
   courseName:String;
   linkedinUrl:String;
   isBlocked:String;
@@ -77,3 +84,7 @@ export class MentorCalendar{
   startDate:Date;
   endDate:Date;
 }
+export class Technologies{
+  technologyName:String;
+  commission:number;
+}[];

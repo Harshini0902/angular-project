@@ -1,20 +1,55 @@
 <div class="heading">Edit technology</div>
+<div class="container margin">
+    <div class="jumbotron col-lg-6 m-auto">
+        <div class="jumbotron-content">
+            <h1>Technology and Commission</h1>
+            <p class="jumbotron-lg-only">Enter technology and commission</p>
+
+            <form [formGroup]="techForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="technologyName">Technology</label>
+                    <input type="technologyName" formControlName="technologyName" name="technologyName" id="technologyName"
+                        class="form-control" placeholder="Enter technology" >
+                       
+                </div>
+                <div class="form-group">
+                    <label for="commission">Commission</label>
+                    <input type="commission" formControlName="commission" name="commission" id="commission"
+                        class="form-control" placeholder="Enter password" >
+                </div>
+               
+                
+                <input type="submit" value="Submit" class="btn btn-primary btn-large btn-color ">
+            </form>
+        </div>
+    </div>
+</div>
+<div *ngFor="let t of tech">
 <div class="card card-inverse card-color">
     <div class="card-block">
         <div class="row">
-            <div class="col-md-2 col-lg-3"><img src="/assets/sql-logo2.png" class="card-img1"></div>
-            <div class="col-md-10 col-lg-9">
-                <h3 class="card-title">MySql</h3>
-                <a href="#" class="btn btn-primary btn-large btn-color mr-2" data-toggle="modal"
-                    data-target="#add">Add</a>
-                <a href="#" class="btn btn-primary btn-large btn-color" data-toggle="modal"
-                    data-target="#remove">Delete</a>
+            <!-- <div class="col-md-2 col-lg-3"><img src="/assets/sql-logo2.png" class="card-img1"></div> -->
+            <div class="col-md-4 col-lg-4">
+                <h3 class="card-title">Technology name:{{t.technologyName}}</h3>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <h3 class="card-title">Commission:{{t.commission}}</h3>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <button href="#" class="btn btn-primary btn-large btn-color" data-toggle="modal"
+                    data-target="#remove">Delete</button>
+            </div>
+                <!-- <a href="#" class="btn btn-primary btn-large btn-color mr-2" data-toggle="modal"
+                    data-target="#add">Add</a> -->
+                
 
             </div>
         </div>
     </div>
 </div>
-<div class="card card-inverse card-color">
+
+<!-- <div class="card card-inverse card-color">
     <div class="card-block">
         <div class="row">
             <div class="col-md-2 col-lg-3"><img src="/assets/java-logo.png" class="card-img1"></div>
@@ -29,8 +64,8 @@
             </div>
         </div>
     </div>
-</div>
-<div class="card card-inverse card-color">
+</div> -->
+<!-- <div class="card card-inverse card-color">
     <div class="card-block">
         <div class="row">
             <div class="col-md-2 col-lg-3"><img src="/assets/dotnet-logo.png" class="card-img1"></div>
@@ -73,43 +108,42 @@
 
             </div>
         </div>
-    </div>
+    </div> 
+</div>-->
+<div class="modal fade" id="add" role="dialog">
+    <div class="modal-dialog">
 
-    <div class="modal fade" id="add" role="dialog">
-        <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add technology</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Add technology</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                </div>
-                <div class="modal-body">
-                    <p>The technology is added successfully</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-color" data-dismiss="modal">Close</button>
-                </div>
+            </div>
+            <div class="modal-body">
+                <p>The technology is added successfully</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-color" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="remove" role="dialog">
-        <div class="modal-dialog">
+</div>
+<div class="modal fade" id="remove" role="dialog">
+    <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Delete technology</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete technology</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                </div>
-                <div class="modal-body">
-                    <p>The technology is deleted successfully</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-color" data-dismiss="modal">Close</button>
-                </div>
+            </div>
+            <div class="modal-body">
+                <p>The technology is deleted successfully</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-color" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
