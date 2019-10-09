@@ -23,6 +23,22 @@ export class UserValidationService {
     return this.http.post(`${this.baseUrl}` + '/userapi/userdetailsapi/userdetails',user);
     
   }
+  blockUser(userName:String):Observable<object>{
+    return this.http.get(`${this.baseUrl}` + '/userapi/userdetailsapi/userdetailsblock/' + `${userName}`);
+    
+  }
+  unblockUser(userName:String):Observable<object>{
+    return this.http.get(`${this.baseUrl}` + '/userapi/userdetailsapi/userdetailsunblock/' + `${userName}`);
+    
+  }
+  blockMentor(userName:String):Observable<object>{
+    return this.http.get(`${this.baseUrl}` + '/mentorapi/mentordetailsapi/mentordetailsblock/' + `${userName}`);
+    
+  }
+  unblockMentor(userName:String):Observable<object>{
+    return this.http.get(`${this.baseUrl}` + '/mentorapi/mentordetailsapi/mentordetailsunblock/' + `${userName}`);
+    
+  }
   createMentor(mentor:object):Observable<object>{
     return this.http.post(`${this.baseUrl}` + '/mentorapi/mentordetailsapi/mentordetails',mentor);
     
@@ -43,7 +59,8 @@ export class User{
   userName:String;
   password:String;
   fullName:String;
-}
+  isBlocked:String;
+}[];
 export class Mentor{
   userName:String;
   password:String;
@@ -52,7 +69,8 @@ export class Mentor{
   commission:number;
   courseName:String;
   linkedinUrl:String;
-  isblocked:String;
+  isBlocked:String;
+ 
 }[];
 export class MentorCalendar{
   
