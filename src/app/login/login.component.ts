@@ -48,7 +48,8 @@ export class LoginComponent implements OnInit {
       this.details=data;
       for(this.index=0;this.index<(this.details.length);this.index++){
         if(this.details[this.index].userName == this.model.email && this.details[this.index].password == this.model.password ){
-          this.userservice.u_name=this.details[this.index].name;
+          this.userservice.u_name=this.details[this.index].userName;
+          this.userservice.full_name=this.details[this.index].fullName
           this.match=true;
           break;
         }

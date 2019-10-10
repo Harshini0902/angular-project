@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class UserValidationService {
   u_name: any;
   m_name:any;
+  full_name:any;
   courseName:any;
   startDate:any;
   endDate:any;
@@ -62,6 +63,24 @@ export class UserValidationService {
   getTechnologies():Observable<Technologies>{
     return this.http.get<Technologies>(`${this.baseUrl}` + '/technologyapi/technologydetailsapi/technologies');
   }
+
+  deleteTechnology(technologyName:String):Observable<Technologies>{
+    return this.http.delete<Technologies>(`${this.baseUrl}` + '/technologyapi/technologydetailsapi/technologies/'+ `${technologyName}`);
+  }
+
+  createSkill(skill:object):Observable<object>{
+    return this.http.post(`${this.baseUrl}` + '/skillsapi/skilldetailsapi/skills',skill);
+    
+  }
+  getSkills(mentorName:String):Observable<MentorSkills>{
+    return this.http.get<MentorSkills>(`${this.baseUrl}` + '/skillsapi/skilldetailsapi/skills/' + `${mentorName}`);
+  }
+
+  deleteSkill(skillName:String):Observable<MentorSkills>{
+    return this.http.delete<MentorSkills>(`${this.baseUrl}` + '/skillsapi/skilldetailsapi/skills'+ `${skillName}`);
+  }
+
+
 }
 export class User{
   userName:String;
@@ -87,4 +106,11 @@ export class MentorCalendar{
 export class Technologies{
   technologyName:String;
   commission:number;
+}[];
+
+export class MentorSkills{
+  sNo:number;
+  skillName:String;
+  proficiency:String;
+  mentorName:String;
 }[];

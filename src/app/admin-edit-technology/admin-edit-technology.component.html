@@ -25,8 +25,8 @@
         </div>
     </div>
 </div>
-<div *ngFor="let t of tech">
-<div class="card card-inverse card-color">
+<div *ngFor="let t of tech;let i =index">
+<div class="card card-inverse card-color p-3">
     <div class="card-block">
         <div class="row">
             <!-- <div class="col-md-2 col-lg-3"><img src="/assets/sql-logo2.png" class="card-img1"></div> -->
@@ -37,16 +37,17 @@
                 <h3 class="card-title">Commission:{{t.commission}}</h3>
             </div>
             <div class="col-md-4 col-lg-4">
-                <button href="#" class="btn btn-primary btn-large btn-color" data-toggle="modal"
+                <button (click)=deleteTechnology($event,t.technologyName,i) class="btn btn-primary btn-large btn-color" data-toggle="modal"
                     data-target="#remove">Delete</button>
             </div>
                 <!-- <a href="#" class="btn btn-primary btn-large btn-color mr-2" data-toggle="modal"
                     data-target="#add">Add</a> -->
                 
 
-            </div>
+            
         </div>
     </div>
+</div>
 </div>
 
 <!-- <div class="card card-inverse card-color">
@@ -110,10 +111,9 @@
         </div>
     </div> 
 </div>-->
-<div class="modal fade" id="add" role="dialog">
+<!-- <div class="modal fade" id="add" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Add technology</h4>
@@ -128,11 +128,10 @@
             </div>
         </div>
     </div>
-</div>
-<div class="modal fade" id="remove" role="dialog">
+</div>-->
+<!-- <div class="modal fade" id="remove" role="dialog">
     <div class="modal-dialog">
 
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Delete technology</h4>
@@ -147,4 +146,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

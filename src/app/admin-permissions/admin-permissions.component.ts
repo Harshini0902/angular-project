@@ -33,16 +33,27 @@ this.mentorDetails= this.userValidationService.getMentorDetails().subscribe((dat
 })
   }
   onBlock(event,userName){
-    this.userValidationService.blockUser(userName).subscribe();
+    this.userValidationService.blockUser(userName).subscribe((data)=>
+    this.ngOnInit()
+
+    );
   }
   onUnblock(event,userName){
-    this.userValidationService.unblockUser(userName).subscribe();
+    this.userValidationService.unblockUser(userName).subscribe((data)=>
+    this.ngOnInit()
+
+
+    );
   }
   onBlockMentor(event,userName){
-    this.userValidationService.blockMentor(userName).subscribe();
+    this.userValidationService.blockMentor(userName).subscribe((data)=>
+    this.ngOnInit()
+);
   }
   onUnblockMentor(event,userName){
-    this.userValidationService.unblockMentor(userName).subscribe();
+    this.userValidationService.unblockMentor(userName).subscribe((data)=>
+    this.ngOnInit()
+);
   }
 
 }

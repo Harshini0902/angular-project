@@ -45,7 +45,9 @@ export class MentorLoginComponent implements OnInit {
       for(this.index=0;this.index<(this.details.length);this.index++){
         if(this.details[this.index].userName == this.model.email && this.details[this.index].password == this.model.password ){
          
-          this.userservice.m_name=this.details[this.index].name;
+          this.userservice.m_name=this.details[this.index].userName;
+          this.userservice.full_name=this.details[this.index].userName;
+          console.log(this.userservice.m_name);
           this.match=true;
           break;
         }

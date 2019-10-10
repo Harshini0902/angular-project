@@ -36,17 +36,24 @@ get f() { return this.techForm.controls; }
     this.save();
     
   }
+  deleteTechnology(event,technologyName,index){
+    this.userValidationService.deleteTechnology(technologyName).subscribe((data)=>
+  //   this.userValidationService.getTechnologies().subscribe((data) => {
+  //     // var index=0;
+  //     // for(this.i=0;this.i<Object.keys(data).length;this.i++){
+  //     //   this.tech[index]=data[this.i];
+  //     //   index++;
+  //     // }
+      
+   
+  // })
+  this.tech.splice(index,1)
+    );
+  }
   save(){
     
     this.userValidationService.createTechnology(this.technology).subscribe((data)=>
-    this.userValidationService.getTechnologies().subscribe((data) => {
-      var index=0;
-      for(this.i=0;this.i<Object.keys(data).length;this.i++){
-        this.tech[index]=data[this.i];
-        index++;
-      }
-   
-  })
+   this.ngOnInit()
     );
    
 }
